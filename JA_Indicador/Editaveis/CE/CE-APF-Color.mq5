@@ -7,7 +7,7 @@
 #property link      ""
 #property version   "1.00"
 #property indicator_chart_window
-#property indicator_buffers 5
+#property indicator_buffers 6
 #property indicator_plots   1
 //--- plot Label1
 #property indicator_label1  "Label1"
@@ -40,8 +40,8 @@ int OnInit()
    SetIndexBuffer(2,LowBuffer3,INDICATOR_DATA);
    SetIndexBuffer(3,CloseBuffer4,INDICATOR_DATA);
    SetIndexBuffer(4,CandleColors,INDICATOR_COLOR_INDEX);
+   SetIndexBuffer(5,buf_MA,INDICATOR_DATA);
    
-   ArraySetAsSeries(buf_MA, true);
    
    handle=iMA(_Symbol,_Period,20,0,MODE_EMA,PRICE_CLOSE);
    if(handle==INVALID_HANDLE)
